@@ -1,0 +1,14 @@
+- name: Install Packages
+  hosts: localhost
+  gather_facts: yes
+  tasks:
+    - yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - htop
+        - iftop
+        - net-tools
+      become: yes
+      when: ansible_distribution== "RedHat" or ansible_distribution== "Fedora"
+

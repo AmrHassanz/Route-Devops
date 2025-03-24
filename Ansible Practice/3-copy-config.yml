@@ -1,0 +1,15 @@
+- name: Copy a Config File and Use Handlers
+  hosts: localhost
+  tasks:
+    - name: Copy Application Code
+      copy:
+        src: /etc/nginx/nginx.conf
+        dest: /home/vagrant/
+      notify: Restart Application Service # if change the handler will run
+
+  handlers:
+    - name: Restart Application Service
+      service:
+        name: nginx
+        state: restarted
+        become: yes

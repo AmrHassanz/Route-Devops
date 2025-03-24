@@ -1,0 +1,13 @@
+- name: Ensure Log Directory Exists
+  hosts: localhost
+  tasks:
+    - file:
+        path: /var/log/audit
+        state: directory
+        mode: '0700'
+      notify: Show Message
+
+    - name: Show Message
+      debug:
+        msg: Log directory is in place!
+      when: ansible_distribution== "Fedora"

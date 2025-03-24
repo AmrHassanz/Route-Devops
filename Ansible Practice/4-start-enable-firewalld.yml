@@ -1,0 +1,9 @@
+- name: Start and Enable firewalld
+  hosts: localhost
+  tasks:
+    - service:
+        name: firewalld
+        state: started
+        enabled: yes
+      become: yes
+      when: (ansible_distribution== "RedHat" and ansible_distribution_major_version | int >= 7) or (ansible_distribution== "Fedora" and ansible_distribution_major_version | int >= 8)
