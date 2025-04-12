@@ -37,3 +37,118 @@ column's name will be uppercased. The default will be changed to true in communi
 2025-04-12 18:14:43,275 p=17375 u=vagrant n=ansible | PLAY RECAP ********************************************************************************
 2025-04-12 18:14:43,276 p=17375 u=vagrant n=ansible | db                         : ok=8    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-04-12 18:14:43,277 p=17375 u=vagrant n=ansible | web                        : ok=7    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 18:24:54,464 p=17691 u=vagrant n=ansible | PLAY [Deploy Apache & PHP] ****************************************************************
+2025-04-12 18:24:54,487 p=17691 u=vagrant n=ansible | TASK [Gathering Facts] ********************************************************************
+2025-04-12 18:24:57,171 p=17691 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:24:57,188 p=17691 u=vagrant n=ansible | TASK [Apache : Install Apache web server] *************************************************
+2025-04-12 18:25:00,519 p=17691 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:25:00,538 p=17691 u=vagrant n=ansible | TASK [Apache : Ensure Apache is running and enabled] **************************************
+2025-04-12 18:25:01,814 p=17691 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:25:01,831 p=17691 u=vagrant n=ansible | TASK [Apache : Notify about the installation attempt] *************************************
+2025-04-12 18:25:01,867 p=17691 u=vagrant n=ansible | ok: [web] => {
+    "msg": "Apache installation attempted."
+}
+2025-04-12 18:25:01,885 p=17691 u=vagrant n=ansible | TASK [Apache : Create a sample index.php using a template] ********************************
+2025-04-12 18:25:03,140 p=17691 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:25:03,161 p=17691 u=vagrant n=ansible | TASK [Apache : Ensure Apache can process PHP files] ***************************************
+2025-04-12 18:25:03,846 p=17691 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:25:03,865 p=17691 u=vagrant n=ansible | TASK [Apache : Open firewall for HTTP and HTTPS] ******************************************
+2025-04-12 18:25:06,430 p=17691 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:25:06,462 p=17691 u=vagrant n=ansible | TASK [PHP : Install PHP and required extensions] ******************************************
+2025-04-12 18:25:07,888 p=17691 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:25:07,910 p=17691 u=vagrant n=ansible | PLAY [Deploy MySQL] ***********************************************************************
+2025-04-12 18:25:07,922 p=17691 u=vagrant n=ansible | TASK [Gathering Facts] ********************************************************************
+2025-04-12 18:25:09,962 p=17691 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:25:09,978 p=17691 u=vagrant n=ansible | TASK [MySQL : Install MySQL server] *******************************************************
+2025-04-12 18:25:12,927 p=17691 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:25:12,943 p=17691 u=vagrant n=ansible | TASK [MySQL : Ensure MySQL service is running and enabled] ********************************
+2025-04-12 18:25:13,688 p=17691 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:25:13,706 p=17691 u=vagrant n=ansible | TASK [MySQL : Set root password for MySQL] ************************************************
+2025-04-12 18:25:14,607 p=17691 u=vagrant n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the
+column's name will be uppercased. The default will be changed to true in community.mysql
+4.0.0.
+
+2025-04-12 18:25:14,608 p=17691 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:25:14,627 p=17691 u=vagrant n=ansible | TASK [MySQL : Remove insecure default settings] *******************************************
+2025-04-12 18:25:15,299 p=17691 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:25:15,318 p=17691 u=vagrant n=ansible | TASK [MySQL : Allow remote connections to MySQL] ******************************************
+2025-04-12 18:25:15,998 p=17691 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:25:16,017 p=17691 u=vagrant n=ansible | TASK [MySQL : Open firewalli for MySQL, Allow all traffic from web server on port 3306] ***
+2025-04-12 18:25:16,925 p=17691 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:25:16,943 p=17691 u=vagrant n=ansible | TASK [MySQL : Create MySQL user and grant permissions] ************************************
+2025-04-12 18:25:17,522 p=17691 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:25:17,539 p=17691 u=vagrant n=ansible | PLAY RECAP ********************************************************************************
+2025-04-12 18:25:17,539 p=17691 u=vagrant n=ansible | db                         : ok=8    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 18:25:17,539 p=17691 u=vagrant n=ansible | web                        : ok=8    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 18:32:48,324 p=17962 u=vagrant n=ansible | ERROR! 'apt' is not a valid attribute for a Block
+
+The error appears to be in '/home/vagrant/my-ansible-project/roles/PHP/tasks/main.yml': line 2, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+---
+- name: Install PHP and required extensions
+  ^ here
+
+2025-04-12 18:33:20,390 p=17966 u=vagrant n=ansible | ERROR! 'apt' is not a valid attribute for a Block
+
+The error appears to be in '/home/vagrant/my-ansible-project/roles/PHP/tasks/main.yml': line 2, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+---
+- name: Install PHP and required extensions
+  ^ here
+
+2025-04-12 18:35:48,954 p=17974 u=vagrant n=ansible | ERROR! 'apt' is not a valid attribute for a Block
+
+The error appears to be in '/home/vagrant/my-ansible-project/roles/PHP/tasks/main.yml': line 2, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+---
+- name: Install PHP and required extensions
+  ^ here
+
+2025-04-12 18:37:07,276 p=17981 u=vagrant n=ansible | PLAY [Deploy Apache & PHP] ****************************************************************
+2025-04-12 18:37:07,296 p=17981 u=vagrant n=ansible | TASK [Gathering Facts] ********************************************************************
+2025-04-12 18:37:09,936 p=17981 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:37:09,952 p=17981 u=vagrant n=ansible | TASK [Apache : Install Apache web server] *************************************************
+2025-04-12 18:37:16,486 p=17981 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:37:16,504 p=17981 u=vagrant n=ansible | TASK [Apache : Ensure Apache is running and enabled] **************************************
+2025-04-12 18:37:17,797 p=17981 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:37:17,817 p=17981 u=vagrant n=ansible | TASK [Apache : Create a sample index.php using a template] ********************************
+2025-04-12 18:37:19,092 p=17981 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:37:19,111 p=17981 u=vagrant n=ansible | TASK [Apache : Ensure Apache can process PHP files] ***************************************
+2025-04-12 18:37:19,783 p=17981 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:37:19,803 p=17981 u=vagrant n=ansible | TASK [Apache : Open firewall for HTTP and HTTPS] ******************************************
+2025-04-12 18:37:21,157 p=17981 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:37:21,188 p=17981 u=vagrant n=ansible | TASK [PHP : Install PHP and required extensions] ******************************************
+2025-04-12 18:37:22,575 p=17981 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:37:22,598 p=17981 u=vagrant n=ansible | PLAY [Deploy MySQL] ***********************************************************************
+2025-04-12 18:37:22,609 p=17981 u=vagrant n=ansible | TASK [Gathering Facts] ********************************************************************
+2025-04-12 18:37:24,696 p=17981 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:37:24,715 p=17981 u=vagrant n=ansible | TASK [MySQL : Install MySQL server] *******************************************************
+2025-04-12 18:37:30,474 p=17981 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:37:30,492 p=17981 u=vagrant n=ansible | TASK [MySQL : Ensure MySQL service is running and enabled] ********************************
+2025-04-12 18:37:31,231 p=17981 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:37:31,249 p=17981 u=vagrant n=ansible | TASK [MySQL : Set root password for MySQL] ************************************************
+2025-04-12 18:37:32,213 p=17981 u=vagrant n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the
+column's name will be uppercased. The default will be changed to true in community.mysql
+4.0.0.
+
+2025-04-12 18:37:32,213 p=17981 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:37:32,235 p=17981 u=vagrant n=ansible | TASK [MySQL : Remove insecure default settings] *******************************************
+2025-04-12 18:37:33,061 p=17981 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:37:33,080 p=17981 u=vagrant n=ansible | TASK [MySQL : Allow remote connections to MySQL] ******************************************
+2025-04-12 18:37:33,824 p=17981 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:37:33,845 p=17981 u=vagrant n=ansible | TASK [MySQL : Open firewalli for MySQL, Allow all traffic from web server on port 3306] ***
+2025-04-12 18:37:34,765 p=17981 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:37:34,786 p=17981 u=vagrant n=ansible | TASK [MySQL : Create MySQL user and grant permissions] ************************************
+2025-04-12 18:37:35,384 p=17981 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:37:35,403 p=17981 u=vagrant n=ansible | PLAY RECAP ********************************************************************************
+2025-04-12 18:37:35,404 p=17981 u=vagrant n=ansible | db                         : ok=8    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 18:37:35,404 p=17981 u=vagrant n=ansible | web                        : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

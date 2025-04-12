@@ -12,6 +12,10 @@
       name: mysql
       state: started
       enabled: yes
+  rescue:
+  - name: Log installation failure
+    debug:
+      msg: "MySQL installation failed."
 
 - name: Secure MySQL
   block:

@@ -12,6 +12,10 @@
       name: apache2
       state: started
       enabled: yes
+  rescue:
+    - name: Log installation failure
+      debug:
+        msg: "Apache installation failed."
 
 - name: Create a sample index.php using a template
   template:
