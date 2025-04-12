@@ -51,15 +51,15 @@ To deploy the LAMP stack, run the following commands:
 
 ### Development Environment
 ```bash
-ansible-playbook -i inventories/dev/inventory.ini lamp_playbook.yml --vault-password-file=vault_password_file --ask-become-pass
+ansible-playbook -i inventories/dev/inventory.ini lamp_playbook.yml --vault-password-file=vault/vault_password_file --ask-become-pass
 ```
 
 ### Production Environment
 ```bash
-ansible-playbook -i inventories/prod/inventory.ini lamp_playbook.yml --vault-password-file=vault_password_file --ask-become-pass
+ansible-playbook -i inventories/prod/inventory.ini lamp_playbook.yml --vault-password-file=vault/vault_password_file --ask-become-pass
 ```
 
-- `--vault-password-file=vault_password_file`: Securely unlocks encrypted values in your playbooks.
+- `--vault-password-file=vault/vault_password_file`: Securely unlocks encrypted values in your playbooks.
 - `--ask-become-pass`: Prompts for your sudo password to elevate privileges on the target machines.
 
 ---
