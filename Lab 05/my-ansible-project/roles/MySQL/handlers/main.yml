@@ -1,0 +1,7 @@
+---
+# handlers file for roles/MySQL
+- name: Restart MySQL
+  systemd:
+    name: mysql
+    state: restarted
+

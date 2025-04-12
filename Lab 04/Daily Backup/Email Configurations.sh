@@ -23,6 +23,7 @@ sudo vim /etc/postfix/main.cf
     relayhost = [smtp.gmail.com]:587
     mydestination = 
 
+    # Add all at the end
     # Enable SASL authentication
     smtp_sasl_auth_enable = yes
     # Disallow methods that allow anonymous authentication

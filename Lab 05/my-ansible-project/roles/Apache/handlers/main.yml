@@ -1,0 +1,7 @@
+---
+# handlers file for roles/Apache
+- name: Restart Apache
+  systemd:
+    name: apache2
+    state: restarted
+

@@ -1,0 +1,7 @@
+---
+# handlers file for roles/PHP
+- name: Restart Apache to load PHP module
+  systemd:
+    name: apache2
+    state: restarted
+
