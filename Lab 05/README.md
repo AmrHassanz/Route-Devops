@@ -4,6 +4,7 @@ This project automates the deployment of a LAMP stack (Linux, Apache, MySQL, PHP
 ### Setup instructions ###
 # 1- CLone the repo
 git clone https://github.com/AmrHassanz/Route-Devops.git
+
 cd "Route-Devops/Lab 05"
 
 # 2- Install Ansible
