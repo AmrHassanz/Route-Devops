@@ -20,7 +20,6 @@ sudo apt install ansible -y
 [Production Inv]
     [web]
         web1 ansible_host=192.168.1.80 ansible_user=ubuntu
-
     [db]
         db1 ansible_host=192.168.1.81 ansible_user=ubuntu
 
