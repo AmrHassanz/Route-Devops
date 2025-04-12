@@ -1,0 +1,13 @@
+- name: Deploy Apache & PHP
+  hosts: web_servers
+  become: yes
+  roles:
+    - Apache
+    - PHP
+
+- name: Deploy MySQL
+  hosts: db_servers
+  become: yes
+  roles:
+    - MySQL 
+  

@@ -1,8 +1,0 @@
----
-# vars file for roles/MySQL
-mysql_root_password: 'route'
-#mysql_database: 'routedb'
-
-mysql_user: 'amr'
-mysql_password: '1234'
-

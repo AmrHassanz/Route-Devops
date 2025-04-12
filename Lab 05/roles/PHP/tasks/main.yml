@@ -1,5 +1,4 @@
 ---
-# tasks file for roles/PHP
 - name: Install PHP and required extensions
   apt:
     name:

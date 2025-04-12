@@ -1,0 +1,39 @@
+2025-04-12 18:14:20,837 p=17375 u=vagrant n=ansible | PLAY [Deploy Apache & PHP] ****************************************************************
+2025-04-12 18:14:20,857 p=17375 u=vagrant n=ansible | TASK [Gathering Facts] ********************************************************************
+2025-04-12 18:14:23,527 p=17375 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:14:23,546 p=17375 u=vagrant n=ansible | TASK [Apache : Install Apache web server] *************************************************
+2025-04-12 18:14:27,121 p=17375 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:14:27,142 p=17375 u=vagrant n=ansible | TASK [Apache : Ensure Apache is running and enabled] **************************************
+2025-04-12 18:14:28,481 p=17375 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:14:28,500 p=17375 u=vagrant n=ansible | TASK [Apache : Create a sample index.php using a template] ********************************
+2025-04-12 18:14:29,820 p=17375 u=vagrant n=ansible | changed: [web]
+2025-04-12 18:14:29,839 p=17375 u=vagrant n=ansible | TASK [Apache : Ensure Apache can process PHP files] ***************************************
+2025-04-12 18:14:30,518 p=17375 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:14:30,537 p=17375 u=vagrant n=ansible | TASK [Apache : Open firewall for HTTP and HTTPS] ******************************************
+2025-04-12 18:14:31,922 p=17375 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:14:31,953 p=17375 u=vagrant n=ansible | TASK [PHP : Install PHP and required extensions] ******************************************
+2025-04-12 18:14:33,371 p=17375 u=vagrant n=ansible | ok: [web]
+2025-04-12 18:14:33,393 p=17375 u=vagrant n=ansible | PLAY [Deploy MySQL] ***********************************************************************
+2025-04-12 18:14:33,402 p=17375 u=vagrant n=ansible | TASK [Gathering Facts] ********************************************************************
+2025-04-12 18:14:35,485 p=17375 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:14:35,502 p=17375 u=vagrant n=ansible | TASK [MySQL : Install MySQL server] *******************************************************
+2025-04-12 18:14:38,661 p=17375 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:14:38,681 p=17375 u=vagrant n=ansible | TASK [MySQL : Ensure MySQL service is running and enabled] ********************************
+2025-04-12 18:14:39,423 p=17375 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:14:39,441 p=17375 u=vagrant n=ansible | TASK [MySQL : Set root password for MySQL] ************************************************
+2025-04-12 18:14:40,286 p=17375 u=vagrant n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the
+column's name will be uppercased. The default will be changed to true in community.mysql
+4.0.0.
+
+2025-04-12 18:14:40,287 p=17375 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:14:40,311 p=17375 u=vagrant n=ansible | TASK [MySQL : Remove insecure default settings] *******************************************
+2025-04-12 18:14:40,998 p=17375 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:14:41,019 p=17375 u=vagrant n=ansible | TASK [MySQL : Allow remote connections to MySQL] ******************************************
+2025-04-12 18:14:41,698 p=17375 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:14:41,715 p=17375 u=vagrant n=ansible | TASK [MySQL : Open firewalli for MySQL, Allow all traffic from web server on port 3306] ***
+2025-04-12 18:14:42,618 p=17375 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:14:42,637 p=17375 u=vagrant n=ansible | TASK [MySQL : Create MySQL user and grant permissions] ************************************
+2025-04-12 18:14:43,253 p=17375 u=vagrant n=ansible | ok: [db]
+2025-04-12 18:14:43,275 p=17375 u=vagrant n=ansible | PLAY RECAP ********************************************************************************
+2025-04-12 18:14:43,276 p=17375 u=vagrant n=ansible | db                         : ok=8    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 18:14:43,277 p=17375 u=vagrant n=ansible | web                        : ok=7    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
