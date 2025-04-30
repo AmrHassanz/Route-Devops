@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  es:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+    container_name: es
+    networks:
+      - foodtrucks
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+    restart: always
+
+  foodtrucks-web:
+    build:
+      context: ./flask-app
+    container_name: foodtrucks-web
+    networks:
+      - foodtrucks
+    ports:
+      - "5000:5000"
+    depends_on:
+      - es
+    restart: always
+
+networks:
+  foodtrucks:
+    driver: bridge
