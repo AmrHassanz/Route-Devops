@@ -1,0 +1,56 @@
+# version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - fastapi
+    networks:
+      - backend-net
+
+  fastapi:
+    build: ./backend
+    expose:
+      - "8000"
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/mydb
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - db
+      - redis
+    networks:
+      - backend-net
+
+  db:    
+    # image: postgres:13-alpine
+    image: postgres:11.5
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=mydb
+    expose:
+      - "5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend-net
+
+  redis:
+    image: redis:alpine3.21
+    # image: redis:7-alpine
+    expose:
+      - "6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - backend-net
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  backend-net:
+    driver: bridge
